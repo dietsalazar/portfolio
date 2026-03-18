@@ -1,9 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-  --text: #2c3a58;
-  --background: #fff8f0;
-  --primary: #4a2e2b;
-  --secondary: #94A378;
-  --accent: #d1855c;
+--text: hsl(175, 86%, 3%);
+--text-secondary: hsl(220, 33%, 26%);
+--base: hsl(0, 60%, 97%);
+--base-variant: hsl(0, 0%, 100%);
+--primary: hsl(5, 64%, 50%);
+--secondary: hsl(172, 64%, 72%);
+--accent: hsl(228, 64%, 62%);
+}
+
+.darkmode {
+--text: hsl(175, 87%, 97%);
+--text-secondary: hsl(221, 33%, 74%);
+--base: hsl(0, 60%, 3%);
+--base-variant: hsl(0, 0%, 0%);
+--primary: hsl(5, 64%, 50%);
+--secondary: hsl(172, 64%, 28%);
+--accent: hsl(228, 64%, 38%);
 }
 
 *,
@@ -12,5 +26,207 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  line-height: 1.5em;
 }
 
+body {
+  background-color: var(--base);
+  font-family: 'Roboto', sans-serif;
+}
+
+p, span, li {
+  color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-secondary);
+  font-family: 'Roboto Serif', serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background-color: inherit;
+}
+
+section {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-content {
+  max-width: 1200px;
+}
+
+#skills {
+  background-color: var(--secondary);
+}
+
+.skills-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.skills-cards-content {
+  background-color: var(--base-variant);
+  padding: 1em;
+  border-radius: 8px;
+}
+
+/* Buttons - Start */
+.btn {
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  width: 100%;
+  align-self: center;
+  margin: 2em 0;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--base);
+  border: 2px solid var(--base);
+}
+
+.btn-primary:hover {
+  background-color: var(--base);
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+@media (min-width: 40em) {
+  .btn {
+    align-self: start;
+    width: fit-content;
+  }
+}
+/* Buttons - End */
+
+/* Nav - Start */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--base);
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#myLinks {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 100%;
+  background: var(--base);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#myLinks li {
+  text-align: center;
+  border-bottom: 1px solid var(--secondary);
+}
+
+#myLinks li a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: 0.3s;
+}
+
+#myLinks li a:hover {
+  background: var(--secondary);
+  color: var(--base);
+}
+
+.icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text);
+  margin-left: 1rem;
+}
+
+@media (min-width: 62em) {
+  #myLinks {
+    display: flex !important;
+    position: static;
+    width: auto;
+    box-shadow: none;
+  }
+
+  #myLinks li {
+    border: none;
+  }
+
+  #myLinks li a {
+    padding: 0.5rem 1rem;
+  }
+
+  .icon {
+    display: none;
+  }
+
+  #myLinks li a:hover {
+    background: transparent;
+    color: var(--primary);
+  }
+}
+/* Nav - End */
+
+
+/* Dark Mode - Start */
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  background-color: var(--base);
+  justify-content: center;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+#theme-switch svg {
+  fill: var(--primary);
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+/* Dark Mode - End */
