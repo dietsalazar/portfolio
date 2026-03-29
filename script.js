@@ -53,3 +53,12 @@ window.onscroll = function() {
 function scrollToTop() {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
+
+// Carousel
+const carousel = document.querySelector(".gallery-container");
+const slide = document.querySelector(".gallery");
+
+function handleCarouselMove(positive = true) {
+  const slideWidth = slide.clientWidth;
+  carousel.scrollLeft = positive ? carousel.scrollLeft + slideWidth : carousel.scrollLeft - slideWidth;
+}

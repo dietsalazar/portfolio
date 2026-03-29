@@ -13,9 +13,7 @@
 <body>
   <header>
     <div class="navbar">
-      <button class="icon" onclick="myFunction()">
-    <i class="fa-solid fa-bars"></i>
-  </button>
+      <button class="icon" onclick="myFunction()"><i class="fa-solid fa-bars"></i></button>
       <h1 class="logo">Diet</h1>
     <nav>
       <ul id="myLinks">
@@ -60,7 +58,7 @@
       <div class="section-content">
         <div class="section-content-text">
           <h2>Skills</h2>
-          <p>Being a “jack of all trades” isn’t all that bad. It makes life a bit more interesting and my skillset flexible–great for the ever-changing demands of the digital marketing industry.</p>
+          <p>Need help with keeping your website content fresh? These skills might just be what you're looking for.</p>
         </div>
       <div class="skills-cards">
         <div class="skills-cards-content">
@@ -153,7 +151,7 @@
             </ul>
             <h4>Results</h4>
             <ul>
-              <li>Migrated 50+ pages across multiple projects</li>
+              <li>Migrated all pages from old sitemaps</li>
               <li>Ensured responsive layouts across devices</li>
               <li>Reduced layout inconsistencies before launch</li>
             </ul>
@@ -350,6 +348,62 @@
       <a href="#" class="btn btn-primary cards-view-all">View All</a>
       </div>
     </section>
+    <section id="design">
+      <div class="section-content">
+        <div class="section-content-text">
+          <h2>Design</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+        </div>
+        <!-- Gallery -->
+        <div class="carousel-wrapper">
+          <button class="carousel-arrow carousel-arrow--prev" onclick="handleCarouselMove(false)">&#8249;</button>
+          <button class="carousel-arrow carousel-arrow--next" onclick="handleCarouselMove()">&#8250;</button>
+        <div class="gallery-container">
+          <div class="gallery">
+            <a id="gallery-image1" href="#gallery-image1"><img src="./assets/images/gallery/1.png" class="gallery-thumb" />
+              <figure class="gallery-full"><img src="./assets/images/gallery/1.png" /><figcaption class="gallery-caption">Floor plan of a house. Designed on Sketchup.</figcaption></figure>
+            </a>
+            <a class="gallery-close" href="#void"><i class="fa-solid fa-xmark"></i></a>
+            <a class="gallery-next" href="#gallery-image2"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="gallery">
+            <a id="gallery-image2" href="#gallery-image2"><img src="./assets/images/gallery/2.png" class="gallery-thumb" />
+            <figure class="gallery-full"><img src="./assets/images/gallery/2.png" /><figcaption class="gallery-caption">Logo for a business selling 3D printed planters. Designed on Adobe Illustrator.</figcaption></figure></a>
+            <a class="gallery-close" href="#void"><i class="fa-solid fa-xmark"></i></a>
+            <a class="gallery-prev" href="#gallery-image1"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="gallery-next" href="#gallery-image3"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="gallery">
+            <a id="gallery-image3" href="#gallery-image3"><img src="./assets/images/gallery/3.png" class="gallery-thumb" />
+            <figure class="gallery-full"><img src="./assets/images/gallery/3.png" /><figcaption class="gallery-caption">Instagram post. Designed on Canva.</figcaption></figure></a>
+            <a class="gallery-close" href="#void"><i class="fa-solid fa-xmark"></i></a>
+            <a class="gallery-prev" href="#gallery-image2"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="gallery-next" href="#gallery-image4"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="gallery">
+            <a id="gallery-image4" href="#gallery-image4"><img src="./assets/images/gallery/4.jpg" class="gallery-thumb" />
+            <figure class="gallery-full"><img src="./assets/images/gallery/4.jpg" /><figcaption class="gallery-caption">Logo and product label for a cosmetics brand. Designed on Adobe Illustrator.</figcaption></figure></a>
+            <a class="gallery-close" href="#void"><i class="fa-solid fa-xmark"></i></a>
+            <a class="gallery-prev" href="#gallery-image3"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="gallery-next" href="#gallery-image5"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="gallery">
+            <a id="gallery-image5" href="#gallery-image5"><img src="./assets/images/gallery/5.png" class="gallery-thumb" />
+            <figure class="gallery-full"><img src="./assets/images/gallery/5.png" /><figcaption class="gallery-caption">Logo for a frozen goods business. Designed on Adobe Illustrator.</figcaption></figure></a>
+            <a class="gallery-close" href="#void"><i class="fa-solid fa-xmark"></i></a>
+            <a class="gallery-prev" href="#gallery-image4"><i class="fa-solid fa-arrow-left"></i></a>
+            <a class="gallery-next" href="#gallery-image6"><i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          <div class="gallery">
+            <a id="gallery-image6" href="#gallery-image6"><img src="./assets/images/gallery/6.png" class="gallery-thumb" />
+            <figure class="gallery-full"><img src="./assets/images/gallery/6.png" /><figcaption class="gallery-caption">"Thank you" card included in orders. Designed on Canva.</figcaption></figure></a>
+            <a class="gallery-close" href="#void"><i class="fa-solid fa-xmark"></i></a>
+            <a class="gallery-prev" href="#gallery-image5"><i class="fa-solid fa-arrow-left"></i></a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </section>
     <section id="contact">
       <div class="section-content">
         <div class="section-content-text">
@@ -365,10 +419,9 @@
         </div>
       </div>
     </section>
-      
   </main>
   <footer>
-    <p>Designed & created by <strong>Diet Salazar</strong>. <a href="#">Code available on <strong>Github</strong></a></p>
+    <p>Designed & created by <strong>Diet Salazar</strong>. <a href="#">Code available on <strong>Github</strong></a>.</p>
   </footer>
   <button onclick="scrollToTop()" id="btn-top" title="Go to top"><i class="fa-solid fa-angles-up"></i></button>
 </body>

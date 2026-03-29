@@ -40,6 +40,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+body.no-scroll {
+  overflow: hidden;
+}
+
 main {
   padding-top: 82px;
 }
@@ -309,8 +313,172 @@ section:nth-of-type(even) {
   display: flex;
   justify-content: space-between;
 }
-
 /* Frontend Section - End */
+
+/* The work below, CSSBox, is released under the Creative Commons
+   Attribution-ShareAlike 4.0 license and is available on
+   https://github.com/TheLastProject/CSSBox. You are not required to add
+   additional credit to your website, just leave the above text in this file */
+.gallery-container {
+  display: flex;
+  gap: 1em;
+}
+
+@media (max-width: 64em) {
+  .gallery-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory; /* Force snapping to each image */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    scrollbar-color: var(--accent) var(--base); 
+  }
+
+  .gallery  {
+    flex: 0 0 90%; /* Show most of one image and a peek of the next */
+    scroll-snap-align: center;
+    height: auto;
+  }
+}
+
+div.gallery {
+  display: inline-block;
+}
+
+.gallery-thumb {
+  max-width: 800px;
+}
+
+figure.gallery-full {
+  z-index: 999999;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background-color: hsl(0, 60%, 97%, 0.8);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  cursor: default;
+  transition: opacity 0.5s linear;
+}
+
+figure.gallery-full img {
+  object-fit: contain;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  max-height: 90%;
+  max-width: 90%;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.gallery-caption {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0,0,0,0.8);
+  padding: 2px 16px;
+  color: rgb(255, 255, 255);
+}
+
+a.gallery-close,
+a.gallery-prev,
+a.gallery-next {
+  z-index: 999999;
+  position: fixed;
+  text-decoration: none;
+  visibility: hidden;
+  background-color: var(--accent);
+  color: var(--base);
+  border-radius: 50%;
+  font-size: 2.5rem;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a.gallery-close {
+  top: 1%;
+  right: 1%
+}
+
+a.gallery-prev,
+a.gallery-next {
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
+a.gallery-prev {
+  left: 5%;
+}
+
+a.gallery-next {
+  right: 5%;
+}
+
+a:target ~ a.gallery-close,
+a:target ~ a.gallery-prev,
+a:target ~ a.gallery-next {
+  visibility: visible;
+}
+
+a:target > img.gallery-thumb + figure.gallery-full {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: initial;
+}
+/* This is the end of CSSBox */
+
+/* Carousel Arrows - Start */
+button.carousel-arrow {
+  display: none;
+}
+
+.carousel-wrapper {
+  position: relative;
+}
+
+@media (max-width: 64em) {
+  button.carousel-arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    bottom: 20%;
+    margin-block: auto;
+    height: 3rem;
+    width: 3rem;
+    background-color: var(--accent);
+    color: var(--base);
+    border-radius: 50%;
+    font-size: 2.5rem;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 100ms;
+  }
+  
+  .carousel-arrow:hover,
+  .carousel-arrow:focus {
+    opacity: 1;
+  }
+  
+  .carousel-arrow--prev {
+    left: 0;
+  }
+  
+  .carousel-arrow--next {
+    right: 0;
+  }
+}
+/* Carousel Arrows - End */
 
 /* Buttons - Start */
 .cards-view-all {
@@ -410,6 +578,7 @@ section:nth-of-type(even) {
 
 /* Nav - Start */
 .navbar {
+  z-index: 2000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -420,7 +589,6 @@ section:nth-of-type(even) {
   /*position: relative;*/
   border-bottom: none;
   transition: border-bottom 0.3s ease, box-shadow 0.3s ease;
-  z-index: 1;
 }
 
 .navbar.scrolled {
