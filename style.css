@@ -294,6 +294,10 @@ section:nth-of-type(even) {
   display: block;
 }
 
+.three-cards-content-text .date {
+  font-style: italic;
+}
+
 .three-cards-content h4 {
   margin-top: 1em;
 }
@@ -501,15 +505,21 @@ button.carousel-arrow {
 
 .btn-group {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   margin-top: 1em;
   gap: 1em;
   width: 100%;
 }
 
 .btn-group .btn {
-  white-space: nowrap;
   margin: 0;
+}
+
+@media (min-width: 40em) {
+  .btn-group {
+    width: fit-content;
+    grid-template-columns: auto auto;
+  }
 }
 
 .btn {
