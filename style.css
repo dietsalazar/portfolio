@@ -83,7 +83,7 @@ img {
 section {
   padding: 2em;
   display: grid;
-  /*justify-content: center;*/
+  scroll-margin-top: 100px;
 }
 
 section:nth-of-type(even) {
@@ -610,6 +610,7 @@ button.carousel-arrow {
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--primary);
+  font-family: 'Roboto Serif', serif;
 }
 
 nav {
